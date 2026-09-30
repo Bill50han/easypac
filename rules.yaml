@@ -1,0 +1,19 @@
+# 除 proxy / default 外，顶层名称均为自定义域名组。
+直连:
+  - baidu.com
+
+"走代理的站点":
+  - example.com
+
+proxy:
+  - method: direct
+    domains: [直连]
+  - method: http
+    url: 127.0.0.1
+    port: 7890
+    domains: ["走代理的站点"]
+
+default:
+  method: socks5
+  url: 127.0.0.1
+  port: 1080
